@@ -14,6 +14,23 @@ Word2Vec based similarity measure of mass spectrometry data.
 
    API <api/spec2vec.rst>
 
+Installation
+============
+
+Prerequisites:  
+
+- Python 3.7  
+- Anaconda
+
+Install spec2vec from Anaconda Cloud with
+
+.. code-block:: console
+
+  # install spec2vec in a new virtual environment to avoid dependency clashes
+  conda create --name spec2vec python=3.7
+  conda activate spec2vec
+  conda install --channel nlesc --channel bioconda --channel conda-forge spec2vec
+
 Examples
 ========
 
@@ -37,6 +54,7 @@ dataset.
     from matchms.filtering import select_by_mz
     from matchms.importing import load_from_mgf
     from spec2vec import SpectrumDocument
+    from spec2vec.model_building import train_new_word2vec_model
 
     def apply_my_filters(s):
         """This is how one would typically design a desired pre- and post-
